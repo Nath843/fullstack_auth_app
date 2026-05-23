@@ -5,15 +5,18 @@ const app = require('./routes/app');
 
 const PORT = process.env.PORT || 5000;
 
-//CONNECT TO DATABASE
+//START THE SERVER AND LISTEN ON THE DEFINED PORT
+//app.listen(PORT, () => {
+//  console.log(`server is running on port ${PORT}`);
+//});// CONNECT TO DATABASE
 connectDB();
 
-//DEFINE A ROUTE FOR THE ROOT URL
+// DEFINE A ROUTE FOR THE ROOT URL
 app.get('/', (req, res) => {
   res.send('Hello World!!!');
 });
 
-//START THE SERVER AND LISTEN ON THE DEFINED PORT
-//app.listen(PORT, () => {
-//  console.log(`server is running on port ${PORT}`);
-//});
+// START THE SERVER AND LISTEN ON THE DEFINED PORT
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
